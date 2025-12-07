@@ -2,6 +2,7 @@ void main() {
   _numType();
   _stringType();
   _boolType();
+  _listType();
 }
 
 /// 数字类型
@@ -43,4 +44,37 @@ _boolType() {
   print(fail);
   print(success || fail);
   print(success && fail);
+}
+
+/// List集合类型
+_listType() {
+  print("---List type---");
+
+  /// 集合的初始化方式
+  List list = [1, 2, 3, "xioami"]; // 初始化时添加元素，集合为泛型
+  print(list);
+  List<int> list2 = [];
+  List list3 = [];
+  list3.add("mimimi"); // 通过add方法添加元素
+  list3.addAll(list);
+  print(list3);
+  List list4 = List.generate(4, (index) => index * 2);
+  print(list4);
+
+  /// 遍历集合的方法
+  for (var ele in list4) {
+    print(ele);
+  }
+
+  list4.forEach((val) {
+    print(val);
+  });
+
+  list4.removeAt(0);
+  print(list4);
+  list4.insert(0, "StopShock");
+  print(list4);
+  print(list4.indexOf(2));
+  List list5 = list4.sublist(2, 3);
+  print(list5);
 }
