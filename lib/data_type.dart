@@ -3,6 +3,7 @@ void main() {
   _stringType();
   _boolType();
   _listType();
+  _mapType();
 }
 
 /// 数字类型
@@ -51,6 +52,7 @@ _listType() {
   print("---List type---");
 
   /// 集合的初始化方式
+  /// 使用[]初始化
   List list = [1, 2, 3, "xioami"]; // 初始化时添加元素，集合为泛型
   print(list);
   List<int> list2 = [];
@@ -77,4 +79,33 @@ _listType() {
   print(list4.indexOf(2));
   List list5 = list4.sublist(2, 3);
   print(list5);
+}
+
+/// map集合类型
+_mapType() {
+  ///  map的初始化
+  /// map初始化使用{}
+  Map names = {"小明": "xiaoming", "小红": "xiaohong"};
+  print(names);
+  Map ages = {};
+  ages['xiaoming'] = 20;
+  ages['xiaohong'] = 18;
+  print(ages);
+
+  /// Map的遍历
+  ages.forEach((key, value) {
+    print("key: $key, value: $value");
+  });
+
+  /// 通过遍历一个map来生成另外一个map
+  Map ages2 = ages.map((key, value) {
+    return MapEntry(key, value + 1);
+  });
+  print(ages2);
+
+  for (var key in ages.keys) {
+    print("key: $key, value: ${ages[key]}");
+  }
+  Map<String, int> ages3 = {};
+  ages3['xiaoli'] = 100;
 }
