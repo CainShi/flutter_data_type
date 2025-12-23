@@ -108,4 +108,6 @@ _mapType() {
   }
   Map<String, int> ages3 = {};
   ages3['xiaoli'] = 100;
+
+  /// api用法
 }
